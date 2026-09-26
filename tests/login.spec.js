@@ -31,7 +31,7 @@ test('login with blank username and password', async ({page})=>{
     await page.getByPlaceholder('Password').fill('')
     await page.getByRole("button",{name:'Login'}).click()
 
-    const errMsgRequired = page.getByText('Required').first()
+    const errMsgRequired = page.getByText('Required')
 
     await expect(errMsgRequired).toHaveCount(2)
 })

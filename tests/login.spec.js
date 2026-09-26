@@ -7,7 +7,6 @@ test("login HR Orange with valid username and password", async ({page})=>{
     await page.getByRole("button",{name:'Login'}).click()
 
     const dashboard = page.getByRole('heading', {name:'Dashboard'})
-    console.log(dashboard);
     
 
     await expect (dashboard).toBeVisible()

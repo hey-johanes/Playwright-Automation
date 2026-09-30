@@ -1,8 +1,11 @@
 const {test, expect} = require('@playwright/test')
 
+test.use({ storageState: { cookies: [], origins: [] } })
+
 test.beforeEach('Open website on every test', async ({page}) =>{
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 })
+
 
 test("login HR Orange with valid username and password", async ({page})=>{
     await page.getByPlaceholder('Username').fill('Admin')

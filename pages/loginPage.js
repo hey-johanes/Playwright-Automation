@@ -6,6 +6,10 @@ class LoginPage {
     this.buttonSubmit = page.getByRole("button", { name: "Login" });
   }
 
+  async navigatetoLogin(url) {
+    await this.page.goto(url);
+  }
+
   async logintoAccount(userName, password) {
     await this.username.fill(userName);
     await this.password.fill(password);
